@@ -7,7 +7,9 @@ import math
 import statistics
 import time
 from abc import ABC, abstractmethod
-from concurrent.futures import CancelledError, as_completed
+
+# from concurrent.futures import CancelledError, as_completed
+from concurrent.futures import CancelledError
 from copy import copy
 from datetime import datetime
 from itertools import chain
@@ -56,13 +58,17 @@ from cognite.client.utils._auxiliary import (
 )
 from cognite.client.utils._concurrency import collect_exc_info_and_raise, execute_tasks_concurrently
 from cognite.client.utils._identifier import Identifier, IdentifierSequence
-from cognite.client.utils._priority_tpe import PriorityThreadPoolExecutor
+
+# from cognite.client.utils._priority_tpe import PriorityThreadPoolExecutor
+from cognite.client.utils._mock_priority_tpe import MockPriorityThreadPoolExecutor as PriorityThreadPoolExecutor
+from cognite.client.utils._mock_priority_tpe import mock_as_completed as as_completed
 from cognite.client.utils._time import timestamp_to_ms
 
 if TYPE_CHECKING:
-    from concurrent.futures import Future
-
+    # from concurrent.futures import Future
     import pandas as pd
+
+    from cognite.client.utils._mock_priority_tpe import MockFuture as Future
 
 
 POST_DPS_OBJECTS_LIMIT = 10_000
