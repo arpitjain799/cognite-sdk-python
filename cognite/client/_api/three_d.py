@@ -429,7 +429,7 @@ class ThreeDRevisionsAPI(APIClient):
             revision_id (int): Id of the revision.
             node_id (int): ID of the root node of the subtree you request (default is the root node).
             depth (int): Get sub nodes up to this many levels below the specified node. Depth 0 is the root node.
-            limit (int): Maximun number of nodes to return. Defaults to 25. Set to -1, float("inf") or None
+            limit (int): Maximum number of nodes to return. Defaults to 25. Set to -1, float("inf") or None
                 to return all items.
             sort_by_node_id (bool): Returns the nodes in `nodeId` order.
             partitions (int): The result is retrieved in this many parts in parallel. Requires `sort_by_node_id` to be set to `true`.
@@ -473,7 +473,7 @@ class ThreeDRevisionsAPI(APIClient):
             model_id (int): Id of the model.
             revision_id (int): Id of the revision.
             properties (Dict[str, Dict[str, Sequence[str]]]): Properties for filtering. The object contains one or more category. Each category references one or more properties. Each property is associated with a list of values. For a node to satisfy the filter, it must, for each category/property in the filter, contain the catogery+property combination with a value that is contained within the corresponding list in the filter.
-            limit (int): Maximun number of nodes to return. Defaults to 25. Set to -1, float("inf") or None
+            limit (int): Maximum number of nodes to return. Defaults to 25. Set to -1, float("inf") or None
                 to return all items.
             partitions (int): The result is retrieved in this many parts in parallel. Requires `sort_by_node_id` to be set to `true`.
 
@@ -510,7 +510,7 @@ class ThreeDRevisionsAPI(APIClient):
             model_id (int): Id of the model.
             revision_id (int): Id of the revision.
             node_id (int): ID of the node to get the ancestors of.
-            limit (int): Maximun number of nodes to return. Defaults to 25. Set to -1, float("inf") or None
+            limit (int): Maximum number of nodes to return. Defaults to 25. Set to -1, float("inf") or None
                 to return all items.
 
         Returns:
